@@ -40,13 +40,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validar entorno de producción
+      - name: Validar entorno de produccion
         env:
           TOKEN: ${{ secrets.PROD_TOKEN }}
         run: |
           if ($env:TOKEN -eq $env:LOCAL_PROD_TOKEN) {
-            Write-Host "CD: validación de producción correcta — listo para desplegar"
+            Write-Host "CD: validacion de producción correcta — listo para desplegar"
           } else {
-            Write-Host "CD: validación fallida"
+            Write-Host "CD: validacion fallida"
             exit 1
           }
